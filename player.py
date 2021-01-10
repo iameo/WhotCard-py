@@ -2,7 +2,11 @@ class Player:
     """an awful, awful player class"""
     def __init__(self, name='NotSoGoodImplementation'):
         self.name = name
-        self._hand = []
+        self.__hand = []
+
+    @property
+    def _hand(self): #not entirely necessary but let's play safe
+        return self.__hand
         
     def deal(self, deck, size=4): #WHOT game usually defaults to 4 draws
         for num in range(size):
